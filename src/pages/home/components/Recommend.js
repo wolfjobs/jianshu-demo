@@ -6,6 +6,8 @@
  */
 
 import React, {Component} from 'react';
+import {RecommendItem, RecommendWrap} from "../style";
+import {connect} from 'react-redux'
 
 class Recommend extends Component {
   constructor(props) {
@@ -14,12 +16,24 @@ class Recommend extends Component {
   }
 
   render() {
+    const {recommend_list} = this.props;
     return (
-      <div>
-        Recommend
-      </div>
+      <RecommendWrap>
+        {
+          recommend_list.map(item=>(
+            <RecommendItem key={item.get('id')} href={item.get('href')} target='_blank'>
+              <img src={item.get('imgurl')} alt="" />
+            </RecommendItem>
+          ))
+        }
+      </RecommendWrap>
     );
   }
 }
+const mapState = (state)=>{
+  return {
+    recommend_list:state.getIn(['home','recommend_list'])
+  }
+}
 
-export default Recommend 
+export default connect(mapState,null)(Recommend)

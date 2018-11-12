@@ -21,10 +21,6 @@ import {
 
 class Header extends Component {
 
-  constructor(props) {
-    super(props)
-  }
-
   search_area = () => {
     const {focused, list, page, totalPage, mouseIn, search_wrap_mousse_inter, search_wrap_mousse_leave, change_list} = this.props;
     // console.log(focused, list, page);
@@ -62,7 +58,7 @@ class Header extends Component {
   };
 
   render() {
-    const {focused,list, handleFocus, handleBlur} = this.props;
+    const {focused, list, handleFocus, handleBlur} = this.props;
     return (
       <HeaderWrapper>
         <HeaderContent>
@@ -77,7 +73,7 @@ class Header extends Component {
                 classNames="slide"
               >
                 <NavSearch
-                  onFocus={()=>handleFocus(list)}
+                  onFocus={() => handleFocus(list)}
                   onBlur={handleBlur}
                   className={focused ? "focused" : ""}/>
               </CSSTransition>

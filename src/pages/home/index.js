@@ -10,7 +10,7 @@ import {HomeLeft, HomeRight, HomeWrapper} from "./style";
 import Topic from "./components/Topic";
 import List from "./components/List";
 import Recommend from "./components/Recommend";
-import Drcode from "./components/Drcode";
+import Qrcode from "./components/Qrcode";
 import Writer from "./components/Writer";
 
 class Home extends Component {
@@ -34,7 +34,7 @@ class Home extends Component {
           </HomeLeft>
           <HomeRight>
             <Recommend/>
-            <Drcode/>
+            <Qrcode/>
             <Writer/>
           </HomeRight>
         </HomeWrapper>
