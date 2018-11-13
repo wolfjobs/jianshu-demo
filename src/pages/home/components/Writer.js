@@ -39,7 +39,7 @@ class Writer extends Component {
               </WriterItemLink>
               <WriterItemLink className={'name'} href="">{item.get('nickname')}</WriterItemLink>
               <p>
-                写了{item.get('total_wordage')/1000}k字 · {item.get('total_likes_count')/1000}k喜欢
+                写了{(item.get('total_wordage')/1000).toFixed(1)}k字 · {(item.get('total_likes_count')/1000).toFixed(1)}k喜欢
               </p>
             </WriterItem>
           ))

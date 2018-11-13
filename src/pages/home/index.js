@@ -12,6 +12,8 @@ import List from "./components/List";
 import Recommend from "./components/Recommend";
 import Qrcode from "./components/Qrcode";
 import Writer from "./components/Writer";
+import {connect} from "react-redux";
+import * as actionCreater from "./store/actionCreater";
 
 class Home extends Component {
   constructor(props) {
@@ -41,6 +43,18 @@ class Home extends Component {
       </Fragment>
     );
   }
+
+  componentDidMount() {
+    this.props.handle_change_data();
+  }
 }
 
-export default Home
+const mapState = () => ({});
+
+const mapDispatch = (dispatch) => ({
+  handle_change_data() {
+    dispatch(actionCreater.get_home_data())
+  }
+});
+
+export default connect(mapState, mapDispatch)(Home)
